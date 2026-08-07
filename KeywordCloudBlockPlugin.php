@@ -95,7 +95,7 @@ class KeywordCloudBlockPlugin extends BlockPlugin
             ->select('p.publication_id')
             ->pluck('p.publication_id');
 
-        $keywords = [];
+        $keywordNames = [];
         foreach ($publicationIds as $publicationId) {
             $publicationKeywords = Repo::controlledVocab()->getBySymbolic(
                 ControlledVocab::CONTROLLED_VOCAB_SUBMISSION_KEYWORD,
@@ -103,14 +103,20 @@ class KeywordCloudBlockPlugin extends BlockPlugin
                 $publicationId,
                 [$locale]
             );
-            $keywords = array_merge($keywords, $publicationKeywords[$locale] ?? []);
+            $names = array_map('strtolower', array_column($publicationKeywords[$locale] ?? [], 'name'));
+            // Deduplicate per publication rather than across the whole journal: a
+            // word's weight is the number of articles that use it, so a keyword
+            // repeated inside a single publication must still count once.
+            $keywordNames = array_merge($keywordNames, array_unique($names));
         }
 
-        $uniqueKeywords = array_unique(array_map('strtolower', array_column($keywords, 'name')));
-        $countKeywords = array_count_values($uniqueKeywords);
+        $countKeywords = array_count_values($keywordNames);
         arsort($countKeywords, SORT_NUMERIC);
 
-        $topKeywords = array_slice($countKeywords, 0, self::KEYWORD_BLOCK_MAX_ITEMS);
+        // preserve_keys matters here: a purely numeric keyword ("2020") would
+        // otherwise have its key reindexed by array_slice and reach the cloud as
+        // "0", "1", ... instead of the word itself.
+        $topKeywords = array_slice($countKeywords, 0, self::KEYWORD_BLOCK_MAX_ITEMS, true);
         $keywords = [];
 
         foreach ($topKeywords as $key => $countKey) {
