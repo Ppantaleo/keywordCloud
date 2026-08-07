@@ -19,3 +19,33 @@ msgstr "Este módulo proporciona una nube de etiquetas de palabras clave del art
 
 msgid "plugins.block.keywordCloud.title"
 msgstr "Palabras clave"
+
+msgid "plugins.block.keywordCloud.settings.description"
+msgstr "Limita la nube a las palabras clave de los artículos publicados dentro de un período de años. Si no se define ningún límite se toman todos los artículos publicados, que es el comportamiento por defecto."
+
+msgid "plugins.block.keywordCloud.settings.period"
+msgstr "Período"
+
+msgid "plugins.block.keywordCloud.settings.yearStart"
+msgstr "Desde el año"
+
+msgid "plugins.block.keywordCloud.settings.yearEnd"
+msgstr "Hasta el año"
+
+msgid "plugins.block.keywordCloud.settings.noLimit"
+msgstr "Sin límite"
+
+msgid "plugins.block.keywordCloud.settings.showPeriod"
+msgstr "Mostrar el período seleccionado en el bloque"
+
+msgid "plugins.block.keywordCloud.settings.invalidRange"
+msgstr "El año inicial no puede ser posterior al año final."
+
+msgid "plugins.block.keywordCloud.period.range"
+msgstr "{$yearStart}–{$yearEnd}"
+
+msgid "plugins.block.keywordCloud.period.from"
+msgstr "Desde {$yearStart}"
+
+msgid "plugins.block.keywordCloud.period.until"
+msgstr "Hasta {$yearEnd}"

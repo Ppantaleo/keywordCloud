@@ -25,4 +25,16 @@
 		<name>context</name>
 		<value>1</value><!-- BLOCK_CONTEXT_SIDEBAR -->
 	</setting>
+	<setting type="int">
+		<name>yearStart</name>
+		<value>0</value><!-- 0 = no lower bound: every published article -->
+	</setting>
+	<setting type="int">
+		<name>yearEnd</name>
+		<value>0</value><!-- 0 = no upper bound: every published article -->
+	</setting>
+	<setting type="bool">
+		<name>showPeriod</name>
+		<value>false</value>
+	</setting>
 </plugin_settings>

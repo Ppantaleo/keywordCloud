@@ -19,3 +19,33 @@ msgstr "This plugin provides a tag cloud of article keywords."
 
 msgid "plugins.block.keywordCloud.title"
 msgstr "Keywords"
+
+msgid "plugins.block.keywordCloud.settings.description"
+msgstr "Restrict the cloud to the keywords of the articles published within a period of years. Leaving both bounds unset keeps every published article, which is the default."
+
+msgid "plugins.block.keywordCloud.settings.period"
+msgstr "Period"
+
+msgid "plugins.block.keywordCloud.settings.yearStart"
+msgstr "From year"
+
+msgid "plugins.block.keywordCloud.settings.yearEnd"
+msgstr "To year"
+
+msgid "plugins.block.keywordCloud.settings.noLimit"
+msgstr "No limit"
+
+msgid "plugins.block.keywordCloud.settings.showPeriod"
+msgstr "Show the selected period in the block"
+
+msgid "plugins.block.keywordCloud.settings.invalidRange"
+msgstr "The starting year cannot be later than the ending year."
+
+msgid "plugins.block.keywordCloud.period.range"
+msgstr "{$yearStart}–{$yearEnd}"
+
+msgid "plugins.block.keywordCloud.period.from"
+msgstr "From {$yearStart}"
+
+msgid "plugins.block.keywordCloud.period.until"
+msgstr "Up to {$yearEnd}"

@@ -11,6 +11,9 @@
 
 <div class="pkp_block block_keyword_cloud">
     <h2 class="title">{translate key="plugins.block.keywordCloud.title"}</h2>
+    {if $keywordCloudPeriod}
+        <p class="keyword_cloud_period">{$keywordCloudPeriod|escape}</p>
+    {/if}
     <div class="content" id='wordcloud'></div>
 
     <script>
